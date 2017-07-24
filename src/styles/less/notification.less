@@ -1,0 +1,65 @@
+@notification-prefix-cls: ~"@{vm-prefix}notification";
+
+.@{notification-prefix-cls} {
+  position: fixed;
+  right: 16px;
+  width: @notification-width;
+  padding: @notification-padding;
+  background-color: @color-white;
+  box-sizing: border-box;
+  border-radius: @notification-border-radius;
+  box-shadow: @notification-shadow;
+  transition: opacity .3s, transform .4s, right .3s, top .4s;
+  overflow: hidden;
+
+  &__group {
+    margin-left: 0;
+    &.is-with-icon {
+      margin-left: 55px;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: @notification-title-font-size;
+    color: @notification-title-color;
+    margin: 0;
+  }
+
+  &__content {
+    font-size: @notification-font-size;
+    color: @notification-color;
+    line-height: 21px;
+    margin: 10px 0 0 0;
+    text-align: justify;
+  }
+
+  &__icon {
+    font-size: @notification-icon-size;
+    float: left;
+    position: relative;
+    top: 3px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: @notification-close-color;
+    font-size: 21px;
+    cursor: pointer;
+
+    &:hover {
+      color: @notification-close-hover-color;
+    }
+  }
+
+  &-fade-enter {
+    transform: translateX(100%);
+    right: 0;
+  }
+
+  &-fade-leave-active {
+    opacity: 0;
+  }
+}
